@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.function.Function;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,8 @@ import fi.solita.clamav.ClamAVClient;
 
 @Service
 public class ScannerService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ScannerService.class);
 
     @Value("${scanner.file.directory:/dockerdrive/malbox/}")
     private String scannerFileDirectory;
@@ -80,6 +84,7 @@ public class ScannerService {
 
 
     public ScanResponse scan(ScanRequest request) {
+        LOG.info("about to scan {}", request);
         ScanResponse response = new ScanResponse();
         response.setValidFileType(isAllowedFileType(request.getFile()));
         if (response.getValidFileType()) {

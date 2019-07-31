@@ -26,6 +26,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'fi.solita.clamav:clamav-client:1.0.1'
 	implementation 'org.apache.tika:tika-parsers:1.21'
+	implementation 'it.ozimov:embedded-redis:0.7.2'
+	implementation 'redis.clients:jedis'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

@@ -8,11 +8,11 @@ public class ScanResponse {
 
     private String message;
 
-    private Boolean cleanFile;
+    private Boolean cleanFile = false;
 
-    private Boolean validUploadLimit;
+    private Boolean validUploadLimit = false;
 
-    private Boolean validFileType;
+    private Boolean validFileType = false;
 
 
     public String getCode() {

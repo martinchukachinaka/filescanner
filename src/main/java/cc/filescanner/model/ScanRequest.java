@@ -40,4 +40,10 @@ public class ScanRequest {
     public void setFile(MultipartFile file) {
         this.file = file;
     }
+
+
+    @Override
+    public String toString() {
+        return String.format("owner: %s, file: %s", ownerId, file);
+    }
 }
